@@ -1,27 +1,44 @@
+def welcome_user():
+    print("Hello! Welcome to the Super Grocery Store Assistant.")
+    print("I am here to assist you.")
 
-"""
-    Welcome to Elite 101 this program is a starter for your chatbot project.
-    The starter prompts the user to enter their name and then greets them with a personalized message.
+def collect_user_info():
+    name = input("What is your name? ")
+    age = input("How old are you? ")
+    print(f"Hello {name}, nice to meet you! You are {age} years old.")
+    return name, age
 
-    Functions:
-        get_user_name(): Prompts the user to enter their name and returns it.
-        greet_user(name): Prints a greeting message using the provided name.
-        main(): Main function that orchestrates the user input and greeting process.
+def help_user():
+    print("\nHow can I assist you today?")
+    print("1. Check product availability")
+    print("2. Update me on sales")
+    print("3. View item details")
+    print("4. Get products recommendation")
+    print("5. Exit")
 
-    Execution:
-        When the script is run directly (not imported as a module), it will execute the main() function.
-"""
+def process_user_choice():
+    while True:
+        choice = input("\nPlease select an option (1-5): ")
 
-
-def get_user_name():
-    return input("Please enter your name: ")
-
-def greet_user(name):
-    print(f"Hi, {name}!")
+        if choice == "1":
+            print("You chose to check product availability. (Please Click Here to be taken to the following tab.)")
+        elif choice == "2":
+            print("You chose to Update me on sales. (Feel free to check our Sales option down below!)")
+        elif choice == "3":
+            print("You chose to View item details. (Please feel free to search up the item to get any specific information.)")
+        elif choice == "4":
+            print("You chose to Get products recommendation. (Please Click Here to be taken to the following tab to help you out, or feel free to ask a woker!)")
+        elif choice == "5":
+            print("Goodbye! Thank you for using the Super Grocery Store Assistant. Have a great day!")
+            break
+        else:
+            print("Invalid option. Please choose a number between 1 and 5.")
 
 def main():
-    user_name = get_user_name()
-    greet_user(user_name)
+    welcome_user()
+    collect_user_info()
+    help_user()
+    process_user_choice()
 
 if __name__ == "__main__":
     main()
